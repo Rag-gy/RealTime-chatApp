@@ -1,0 +1,51 @@
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "name":"anjali",
+    "email":"amasdbs@email.com",
+    "password":"ambuli"
+}
+
+###
+
+GET http://localhost:5000/user?search=a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGY4YzgwYzNhM2Q0ZWVmNmRkZWE3ZCIsImlhdCI6MTY3NTYwNzYwMywiZXhwIjoxNjc4MTk5NjAzfQ.860uZwMosrVtourTOf1zPmBBVaxIf-duqpt-dfiVI6M
+# here after the question mark the values are queries
+
+###
+
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "name":"asd",
+    "email":"asd",
+    "password":"asd"
+}
+
+###
+
+POST http://localhost:5000/chat
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGY4YzgwYzNhM2Q0ZWVmNmRkZWE3ZCIsImlhdCI6MTY3NTk1MzQ2NCwiZXhwIjoxNjc4NTQ1NDY0fQ.QxWd2g6dAYLEWO7inHlK_qsBh4H9KHBqBAQ0V_GxYiM
+Content-Type: application/json
+
+{
+    "userId" : "63df8c80c3a3d4eef6ddea7d"
+}
+
+###
+
+GET http://localhost:5000/chat
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGY4YzgwYzNhM2Q0ZWVmNmRkZWE3ZCIsImlhdCI6MTY3NTYwNzYwMywiZXhwIjoxNjc4MTk5NjAzfQ.860uZwMosrVtourTOf1zPmBBVaxIf-duqpt-dfiVI6M
+
+###
+
+POST http://localhost:5000/chat/group
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGY4YzgwYzNhM2Q0ZWVmNmRkZWE3ZCIsImlhdCI6MTY3NjIxMzI5NSwiZXhwIjoxNjc4ODA1Mjk1fQ.B0ZFVU_7fLnh2tL9oq5EtGETY-XRGSzupgRu4P01Tic
+Content-Type: application/json
+
+{
+    "name": "Test Group",
+    "users": "[\"63df8c80c3a3d4eef6ddea7d\", \"63e58a7768c0c85f7bd29b74\", \"63e58a7768c0c85f7bd29b74\"]"
+}

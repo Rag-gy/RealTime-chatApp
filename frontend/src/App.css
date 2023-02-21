@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.App{
+  min-height:100vh;
+  display: flex;
+  opacity: 0.6;
+  background-color: #000000;
+  opacity: 0.8;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 14px ), repeating-linear-gradient( #a5498055, #a54980 );
+}
+
+::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
