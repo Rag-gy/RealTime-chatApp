@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const connectDB = async()=>{
     try{
         mongoose.set('strictQuery', true);
-        const connect = await mongoose.connect(process.env.MONGO,{
+        const connect = await mongoose.connect("mongodb+srv://Ambuli:aMBULI@cluster0.lkglxa1.mongodb.net/community?retryWrites=true&w=majority",{
             useNewUrlParser:true,
             useUnifiedTopology:true
         });
