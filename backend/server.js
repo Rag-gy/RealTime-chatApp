@@ -5,12 +5,15 @@ const connectDB = require('./config/DB')
 const messageRouter = require('./route/messageRoute')
 const userRouter = require('./route/userRoute')
 const chatRouter = require('./route/chatRoute')
+const path = require('path')
 const { notFound, errorHandler } = require('./middleware/errorManagement')
 const app = express()
 dotenv.config()
 
 app.use(cors())
 app.use(express.json())
+
+const dirName = path.resolve();
 
 connectDB()
 
@@ -23,6 +26,13 @@ app.use('/chat', chatRouter)
 app.use('/message', messageRouter)
 app.use(notFound)   // if all the routes are not satisified then we have a link which goes to somewhere else
 app.use(errorHandler)   // if that raise an error then we just showcase the error
+
+// deployment
+app.use(express.static(path.join(dirName, '/frontend/build')))
+app.get('*', (req, res) =>{
+    res.sendFile(path.resolve(dirName, "frontend", "build", "index.html"))
+})
+
 
 PORT = process.env.PORT || 5000 // just in case if our port is not available in the env file
 
